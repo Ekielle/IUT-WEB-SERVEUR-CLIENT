@@ -1,6 +1,15 @@
+function init(){
+    defTitre1();
+    defTitre2();
+    defTitre3();
+    defTitre4();
+    inverseTexte();
+    dateModified();
+}
+
+
 function defTitre1() {
     var titre = document.getElementById("titre").innerText = "H1 un";
-    defTitre2();
 }
 
 function  defTitre2() {
@@ -9,7 +18,6 @@ function  defTitre2() {
     {
         document.getElementById("titre").innerText = h2s[0].innerText;
     }
-    defTitre3();
 }
 
 function defTitre3(){
@@ -23,7 +31,6 @@ function defTitre3(){
     {
         document.getElementById("titre").innerText = "Fournier Nathan"
     }
-    defTitre4();
 }
 
 function defTitre4 (){
@@ -41,7 +48,6 @@ function defTitre4 (){
     {
         document.title = "Fournier Nathan"
     }
-    inverseTexte();
 }
 
 function inverseTexte() {
@@ -54,4 +60,18 @@ function inverseTexte() {
             ps[ps.length-(i+1)].innerText = tmp;
         }
     }
+}
+
+function dateModified(){
+    var date = new Date(document.lastModified);
+    var sDate = date.getDay() + " " +  month(date.getMonth()) + " " + date.getFullYear();
+    var hDate = date.getHours() + " " + date.getMinutes() + " " + date.getSeconds();
+    var author = document.querySelector("meta[name = 'author']").getAttribute("content");
+    document.getElementById("date_modif").innerText = "Voici la date de modification : " + sDate + " à " + hDate + " par " + author;
+
+}
+
+function month(m){
+    const months = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"]
+    return months[m];
 }
