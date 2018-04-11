@@ -128,16 +128,15 @@ function majGraphH() {
 }
 
 function majSaisie() {
-    console.log("test");
     var formulaire = document.getElementsByTagName("input")[0];
     if(formulaire.value == "") {
-        formulaire.className = "blanc";
+        formulaire.className = "white";
     }
-    else if(formulaire.value >= '0' && formulaire.value <= '9'){
-        formulaire.className = "vert";
+    else if(!isNaN(formulaire.value)){
+        formulaire.className = "green";
     }
     else {
-        formulaire.className = "rouge";
+        formulaire.className = "red";
     }
 }
 
