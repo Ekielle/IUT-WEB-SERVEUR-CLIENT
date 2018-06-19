@@ -128,7 +128,7 @@ function majGraphH() {
 }
 
 function majSaisie() {
-    var formulaire = document.getElementsByTagName("input")[0];
+    var formulaire = document.getElementById("saisi");
     if(formulaire.value == "") {
         formulaire.className = "white";
     }
